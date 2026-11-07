@@ -18,7 +18,6 @@ Cara memasang foto:
 Kategori yang tersedia pada contoh:
 - Kretek
 - Filter
-- Linting
 
 Untuk menambah produk:
 Tambahkan objek baru ke array `products` di js/app.js dan pastikan
