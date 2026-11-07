@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TOBACCO merupakan platform katalog digital yang menyajikan informasi produk tembakau dan informasi kesehatan."
+    />
+    <title>TOBACCO — Katalog Informasi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html"> TOB<span>A</span>CCO. </a>
+
+        <nav class="nav-links" aria-label="Navigasi utama">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#produk">Katalog</a>
+          <a href="#informasi">Informasi</a>
+        </nav>
+
+        <span class="age-label">INFORMASI 18+</span>
+      </div>
+    </header>
+
+    <!-- HEALTH NOTICE -->
+    <div class="health-strip">
+      PERINGATAN: MEROKOK MENYEBABKAN KANKER, SERANGAN JANTUNG, IMPOTENSI, DAN
+      GANGGUAN KEHAMILAN SERTA JANIN.
+    </div>
+
+    <main>
+      <!-- HERO -->
+      <section class="container hero" id="dashboard">
+        <div class="hero-copy">
+          <span class="eyebrow"> PRODUCT INFORMATION DIRECTORY </span>
+
+          <h1>
+            Mengenal Produk
+            <span>Tembakau.</span>
+          </h1>
+
+          <p>
+            TOBACCO merupakan platform katalog digital yang menyajikan informasi
+            berbagai produk tembakau dalam satu tempat. Pengunjung dapat melihat
+            kategori, nama produk, serta informasi terkait yang tersedia pada
+            setiap entri katalog.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#produk"> Lihat Katalog </a>
+
+            <a class="button button-outline" href="#informasi">
+              Informasi Kesehatan
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Panel informasi katalog">
+          <div class="hero-caption">
+            <span>01 / PRODUCT DIRECTORY</span>
+
+            <p>Pusat informasi dan katalog produk.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLATFORM INTRODUCTION -->
+      <section class="container section" id="tentang">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ABOUT TOBACCO</span>
+
+            <h2>Mengenal TOBACCO</h2>
+
+            <p>Mengenal platform dan informasi yang tersedia di dalamnya.</p>
+          </div>
+
+          <a href="about.html" class="text-link"> Tentang Kami → </a>
+        </div>
+
+        <div class="info-card">
+          <p>
+            TOBACCO dikembangkan sebagai platform katalog digital untuk
+            menyajikan informasi mengenai berbagai produk tembakau secara
+            terstruktur.
+          </p>
+
+          <p>
+            Melalui platform ini, pengunjung dapat melihat informasi produk
+            berdasarkan kategori, mengenali nama dan merek produk, serta membaca
+            keterangan yang tersedia.
+          </p>
+
+          <p>
+            TOBACCO juga menyediakan halaman informasi dan kontak sebagai sarana
+            komunikasi terkait pengelolaan platform dan data katalog.
+          </p>
+        </div>
+      </section>
+
+      <!-- DASHBOARD OVERVIEW -->
+      <section class="container section" aria-labelledby="overview-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">RINGKASAN</span>
+
+            <h2 id="overview-title">Dashboard Overview</h2>
+
+            <p>
+              Ringkasan data katalog yang ditampilkan pada platform TOBACCO.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>Kategori</span>
+            <strong id="categoryCount">0</strong>
+            <small>Kategori pada katalog</small>
+          </article>
+
+          <article class="stat-card">
+            <span>Produk terdaftar</span>
+            <strong id="productCount">0</strong>
+            <small>Entri data katalog</small>
+          </article>
+
+          <article class="stat-card">
+            <span>Hasil pencarian</span>
+            <strong id="resultCount">0</strong>
+            <small>Data sesuai pencarian dan filter</small>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRODUCT CATALOG -->
+      <section class="container section" id="produk">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">PRODUCT DIRECTORY</span>
+
+            <h2>Katalog Produk</h2>
+
+            <p>
+              Kumpulan informasi produk berdasarkan kategori dan data yang
+              tersedia.
+            </p>
+          </div>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span class="sr-only"> Cari produk </span>
+
+            <span class="search-icon" aria-hidden="true"> ⌕ </span>
+
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Cari nama atau kategori produk..."
+              autocomplete="off"
+            />
+          </label>
+
+          <!-- CATEGORY FILTER -->
+          <div class="category-picker" id="categoryPicker">
+            <span class="sr-only" id="categoryFilterLabel">
+              Filter kategori
+            </span>
+
+            <!--
+                        Select asli dipertahankan agar tetap
+                        kompatibel dengan js/app.js.
+                    -->
+            <select
+              id="categoryFilter"
+              class="category-native-select"
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <option value="all">Semua kategori</option>
+              <option value="Kretek">Kretek</option>
+              <option value="Filter">Filter</option>
+              <!-- <option value="Linting">Linting</option> -->
+            </select>
+
+            <!-- Tombol dropdown -->
+            <button
+              class="category-toggle"
+              id="categoryToggle"
+              type="button"
+              aria-labelledby="categoryFilterLabel categorySelectedText"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span id="categorySelectedText"> Semua kategori </span>
+
+              <span class="category-chevron" aria-hidden="true"></span>
+            </button>
+
+            <!-- Pilihan kategori -->
+            <div
+              class="category-menu"
+              id="categoryMenu"
+              role="listbox"
+              aria-label="Pilih kategori"
+              hidden
+            >
+              <button
+                class="category-option is-selected"
+                type="button"
+                role="option"
+                aria-selected="true"
+                data-value="all"
+              >
+                Semua kategori
+              </button>
+
+              <button
+                class="category-option"
+                type="button"
+                role="option"
+                aria-selected="false"
+                data-value="Kretek"
+              >
+                Kretek
+              </button>
+
+              <button
+                class="category-option"
+                type="button"
+                role="option"
+                aria-selected="false"
+                data-value="Filter"
+              >
+                Filter
+              </button>
+
+              <!-- <button
+                            class="category-option"
+                            type="button"
+                            role="option"
+                            aria-selected="false"
+                            data-value="Linting"
+                        >
+                            Linting
+                        </button> -->
+            </div>
+          </div>
+
+          <!-- RESET FILTER -->
+          <button
+            class="button button-outline reset-button"
+            id="resetFilters"
+            type="button"
+          >
+            Reset
+          </button>
+        </div>
+
+        <p class="result-summary" id="resultSummary" aria-live="polite"></p>
+
+        <div class="product-grid" id="productGrid">
+          <!-- Kartu produk dibuat oleh js/app.js -->
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <h3>Produk tidak ditemukan</h3>
+
+          <p>Coba gunakan kata kunci atau kategori yang berbeda.</p>
+        </div>
+      </section>
+
+      <!-- INFORMATION CENTER -->
+      <section class="container section" id="informasi">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">INFORMATION CENTER</span>
+
+            <h2>Informasi & Edukasi</h2>
+
+            <p>
+              Informasi mengenai katalog, platform, dan risiko kesehatan produk
+              tembakau.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <span class="info-number"> 01 — KATALOG </span>
+
+            <h3>Informasi Produk</h3>
+
+            <p>
+              Informasi katalog dapat mencakup nama produk, kategori, merek,
+              produsen, informasi kemasan, dan keterangan lain berdasarkan
+              sumber data yang tersedia.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="info-number"> 02 — PLATFORM </span>
+
+            <h3>Tentang TOBACCO</h3>
+
+            <p>
+              Pelajari tujuan pengembangan TOBACCO, informasi yang disajikan,
+              serta prinsip pengelolaan data katalog.
+            </p>
+
+            <a href="about.html" class="text-link"> Pelajari lebih lanjut → </a>
+          </article>
+
+          <article class="info-card">
+            <span class="info-number"> 03 — KESEHATAN </span>
+
+            <h3>Risiko Penggunaan</h3>
+
+            <p>
+              Produk tembakau mengandung nikotin yang menyebabkan
+              ketergantungan. Penggunaannya meningkatkan risiko berbagai
+              penyakit serius.
+            </p>
+          </article>
+        </div>
+
+        <!-- HEALTH WARNING -->
+        <aside class="health-warning">
+          <h3>⚠ Peringatan Kesehatan</h3>
+
+          <p>
+            Produk tembakau berbahaya bagi kesehatan. Jangan merokok. Lindungi
+            anak-anak dan orang lain dari paparan asap rokok.
+          </p>
+        </aside>
+      </section>
+
+      <!-- CONTACT INFORMATION -->
+      <section class="container section">
+        <div class="contact-preview">
+          <div>
+            <span class="eyebrow"> CONTACT INFORMATION </span>
+
+            <h2>Informasi Kontak</h2>
+
+            <p>
+              Untuk pertanyaan, masukan, atau koreksi informasi mengenai
+              platform TOBACCO, silakan kunjungi halaman kontak kami.
+            </p>
+          </div>
+
+          <a href="contact.html" class="button button-outline">
+            Lihat Kontak
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- BRAND -->
+          <div class="footer-brand">
+            <a href="index.html" class="brand"> TOB<span>A</span>CCO. </a>
+
+            <p>
+              Platform katalog digital yang menyajikan informasi produk
+              tembakau, kategori, serta informasi terkait dalam satu tempat.
+            </p>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="footer-column">
+            <h3>Follow Us</h3>
+
+            <ul>
+              <li>
+                <a
+                  href="https://www.tiktok.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tiktok
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Youtube
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- INFORMATION -->
+          <div class="footer-column">
+            <h3>Informasi</h3>
+
+            <ul>
+              <li>
+                <a href="about.html"> Tentang Kami </a>
+              </li>
+
+              <li>
+                <a href="contact.html"> Kontak </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 TOBACCO. All rights reserved.</p>
+
+          <p>Informasi untuk pengunjung dewasa (18+).</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const picker = document.getElementById("categoryPicker");
+        const toggle = document.getElementById("categoryToggle");
+        const menu = document.getElementById("categoryMenu");
+        const nativeSelect = document.getElementById("categoryFilter");
+        const selectedText = document.getElementById("categorySelectedText");
+        if (!picker || !toggle || !menu || !nativeSelect || !selectedText)
+          return;
+        const options = Array.from(menu.querySelectorAll(".category-option"));
+
+        function closeMenu() {
+          menu.hidden = true;
+          toggle.setAttribute("aria-expanded", "false");
+        }
+        function openMenu() {
+          menu.hidden = false;
+          toggle.setAttribute("aria-expanded", "true");
+        }
+        function syncSelection() {
+          const selected = nativeSelect.options[nativeSelect.selectedIndex];
+          selectedText.textContent = selected
+            ? selected.textContent.trim()
+            : "Semua kategori";
+          options.forEach((option) => {
+            const active = option.dataset.value === nativeSelect.value;
+            option.classList.toggle("is-selected", active);
+            option.setAttribute("aria-selected", String(active));
+          });
+        }
+        toggle.addEventListener("click", () =>
+          menu.hidden ? openMenu() : closeMenu(),
+        );
+        options.forEach((option) =>
+          option.addEventListener("click", () => {
+            nativeSelect.value = option.dataset.value;
+            nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+            syncSelection();
+            closeMenu();
+            toggle.focus();
+          }),
+        );
+        document.addEventListener("click", (event) => {
+          if (!picker.contains(event.target)) closeMenu();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !menu.hidden) {
+            closeMenu();
+            toggle.focus();
+          }
+        });
+        nativeSelect.addEventListener("change", syncSelection);
+        syncSelection();
+      })();
+    </script>
+  </body>
+</html>
