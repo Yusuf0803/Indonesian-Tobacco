@@ -167,6 +167,7 @@ a {
     align-items: center;
     padding-top: 85px;
     padding-bottom: 85px;
+    text-align: justify;
 }
 
 .about-intro p {
@@ -528,4 +529,213 @@ a {
         justify-content: center;
         padding: 18px 0;
     }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* =========================================
+   RESPONSIVE ABOUT IMAGE
+   Smartphone dan layar maksimal 560px
+========================================= */
+
+@media screen and (max-width: 560px) {
+
+     .header-content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Age label tetap terlihat */
+    .age-label {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    /* Tombol hamburger */
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        padding: 9px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: transparent;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 19px;
+        height: 2px;
+        background: var(--text, #ffffff);
+        border-radius: 2px;
+        transition: transform .25s ease, opacity .2s ease;
+    }
+
+    /* Animasi hamburger menjadi X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Dropdown navigasi */
+    .main-nav {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 8px;
+
+        background: var(--surface, #191919);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-8px);
+        transition:
+            opacity .2s ease,
+            transform .2s ease,
+            visibility .2s ease;
+
+        z-index: 1000;
+    }
+
+    /* Dropdown ketika dibuka */
+    .main-nav.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 12px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+        background: rgba(255, 255, 255, .06);
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 200px;
+        height: auto;
+        padding: 25px 12px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-inline: auto;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .image-placeholder span {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(28px, 8vw, 42px);
+        letter-spacing: clamp(2px, 0.8vw, 4px);
+        line-height: 1.2;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    .image-placeholder small {
+        max-width: 100%;
+        font-size: 8px;
+        letter-spacing: 1.5px;
+        line-height: 1.6;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   Layar maksimal 380px
+========================================= */
+
+@media screen and (max-width: 380px) {
+
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .age-label {
+        margin-right: 10px;
+    }
+
+    .main-nav {
+        top: calc(100% + 10px);
+    }
+
+    .main-nav a {
+        padding: 11px 10px;
+        font-size: 13px;
+    }
+
+
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+        min-height: 170px;
+        padding: 20px 10px;
+    }
+
+    .image-placeholder span {
+        font-size: 27px;
+        letter-spacing: 2px;
+    }
+
+    .image-placeholder small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
 }

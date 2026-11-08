@@ -35,15 +35,28 @@
     <!-- HEADER -->
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="index.html"> TOB<span>A</span>CCO. </a>
+        <a class="brand" href="index.html">TOB<span>A</span>CCO.</a>
 
-        <nav class="nav-links" aria-label="Navigasi utama">
+        <nav class="nav-links" id="mainNav" aria-label="Navigasi utama">
           <a href="#dashboard">Dashboard</a>
           <a href="#produk">Katalog</a>
           <a href="#informasi">Informasi</a>
         </nav>
 
         <span class="age-label">INFORMASI 18+</span>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
@@ -448,6 +461,9 @@
     </footer>
 
     <script>
+      /* =====================================
+       1. CATEGORY DROPDOWN
+    ===================================== */
       (() => {
         const picker = document.getElementById("categoryPicker");
         const toggle = document.getElementById("categoryToggle");
@@ -500,6 +516,70 @@
         });
         nativeSelect.addEventListener("change", syncSelection);
         syncSelection();
+
+        /* =====================================
+       2. MOBILE HAMBURGER NAVIGATION
+    ===================================== */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+
+        if (menuToggle && mainNav) {
+          function closeNavMenu() {
+            menuToggle.classList.remove("active");
+            mainNav.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Buka menu navigasi");
+          }
+
+          function openNavMenu() {
+            menuToggle.classList.add("active");
+            mainNav.classList.add("active");
+
+            menuToggle.setAttribute("aria-expanded", "true");
+            menuToggle.setAttribute("aria-label", "Tutup menu navigasi");
+          }
+
+          menuToggle.addEventListener("click", () => {
+            const isOpen = menuToggle.classList.contains("active");
+
+            if (isOpen) {
+              closeNavMenu();
+            } else {
+              openNavMenu();
+            }
+          });
+
+          // Tutup menu ketika mengeklik area di luar navigasi
+          document.addEventListener("click", (event) => {
+            if (
+              !menuToggle.contains(event.target) &&
+              !mainNav.contains(event.target)
+            ) {
+              closeNavMenu();
+            }
+          });
+
+          // Tutup menu menggunakan tombol Escape
+          document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+              closeNavMenu();
+            }
+          });
+
+          // Tutup menu setelah memilih navigasi
+          mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeNavMenu);
+          });
+
+          // Reset kondisi menu ketika kembali ke desktop
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 560) {
+              closeNavMenu();
+            }
+          });
+        }
       })();
     </script>
   </body>
