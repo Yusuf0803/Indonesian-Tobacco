@@ -372,6 +372,7 @@ h1 span {
   margin-bottom: 12px;
   color: var(--muted);
   font-size: 13px;
+  text-align: justify;
 }
 
 #tentang .info-card p:last-child {
@@ -662,6 +663,7 @@ h1 span {
 .health-warning p {
   color: var(--muted);
   font-size: 13px;
+  text-align: justify;
 }
 
 .health-warning {
@@ -702,6 +704,7 @@ h1 span {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.8;
+  text-align: justify;
 }
 
 /* 9. FOOTER */
@@ -728,6 +731,7 @@ h1 span {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .footer-column h3 {

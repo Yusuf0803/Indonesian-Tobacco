@@ -10,21 +10,21 @@ const products = [
         id: 1,
         name: "Menoro Coklat",
         category: "Kretek",
-        description: "Menoro Coklat, rokok produksi kudus, lihat kontak informasi jika anda ingin bertanya terkait produk atau membelinya, kontak yang dapat dihubungi saat ini hanya di Facebook.",
+        description: "Menoro Coklat, rokok produksi kudus, lihat kontak informasi jika anda ingin bertanya terkait produk atau membelinya, hubungi kami melalui Facebook atau Email.",
         image: "assets/products/Menoro Coklat.jpeg"
     },
+    // {
+    //     id: 2,
+    //     name: "Djarum Black Macha",
+    //     category: "Kretek",
+    //     description: "Black Macha, rokok produksi kudus, lihat kontak informasi jika anda ingin bertanya terkait produk atau membelinya, kontak yang dapat dihubungi saat ini hanya di Facebook.",
+    //     image: "assets/products/Djarum Black Matcha.jpeg"
+    // },
     {
         id: 2,
-        name: "Djarum Black Macha",
-        category: "Kretek",
-        description: "Black Macha, rokok produksi kudus, lihat kontak informasi jika anda ingin bertanya terkait produk atau membelinya, kontak yang dapat dihubungi saat ini hanya di Facebook.",
-        image: "assets/products/Djarum Black Matcha.jpeg"
-    },
-    {
-        id: 3,
         name: "Klise",
         category: "Filter",
-        description: "Klise, rokok produksi Jawa Timur, lihat kontak informasi jika anda ingin bertanya terkait produk atau membelinya, kontak yang dapat dihubungi saat ini hanya di Facebook.",
+        description: "Klise, rokok produksi Jawa Timur, lihat kontak informasi jika anda ingin bertanya terkait produk atau membelinya, hubungi kami melalui Facebook atau Email.",
         image: "assets/products/Klise.jpeg"
     }
 ];

@@ -240,6 +240,7 @@ a {
     color: var(--muted);
     font-size: 12px;
     line-height: 1.8;
+    text-align: justify;
 }
 
 /* RESPONSIBILITY */
@@ -261,6 +262,7 @@ a {
     color: var(--muted);
     font-size: 13px;
     margin-top: 13px;
+    text-align: justify;
 }
 
 /* CONTACT */
@@ -370,6 +372,10 @@ a {
 
 .contact-list-item p {
     font-size: 13px;
+}
+
+.contact-note p {
+    text-align: justify;
 }
 
 /* CONTACT NOTE */
@@ -599,8 +605,9 @@ a {
     .main-nav {
         position: absolute;
         top: calc(100% + 12px);
-        left: 0;
+        left: auto;
         right: 0;
+        width: min(240px, calc(100vw - 32px));
 
         display: flex;
         flex-direction: column;
